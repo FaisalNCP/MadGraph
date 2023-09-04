@@ -1,0 +1,116 @@
+1. Open your browser and type the following URL: "https://launchpad.net/mg5amcnlo." Then, download the latest version of MadGraph.
+
+2. Next, open your terminal in the folder where you have downloaded MadGraph.
+
+3. Type the following command to unzip MadGraph (replace "v3.X.Y" with your MadGraph version name):
+   ```
+   unzip MG5_aMC_v3.X.Y
+   ```
+
+4. Now, type the following command to navigate to the MadGraph directory:
+   ```
+   cd MG5_aMC_v3.X.Y/MG5_aMC_v3.X.Y/
+   ```
+
+5. After that, run MadGraph with the following command:
+   ```
+   ./bin/mg5_aMC
+   ```
+
+6. This will open MadGraph.
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+
+"**To install LHAPDF externally:**
+
+Firstly, open your terminal inside the MadGraph folder where you see the 'bin' folder.
+
+Run the following command:
+```
+wget https://lhapdf.hepforge.org/downloads/?f=LHAPDF-6.X.Y.tar.gz -O LHAPDF-6.X.Y.tar.gz
+```
+(Note: Replace 'X' and 'Y' With latest  version of LHAPDF)
+
+After this, unzip the file by typing:
+```
+tar xf LHAPDF-6.X.Y.tar.gz
+```
+
+Then, navigate to the LHAPDF directory:
+```
+cd LHAPDF-6.5.4/
+```
+
+Type the following commands one by one:
+```
+./configure --prefix=$PWD/..
+make
+make install
+```
+
+This will install LHAPDF.
+
+
+To link LHAPDF with MadGraph, follow these steps:
+
+1. Open your terminal and navigate to the 'bin' directory inside the LHAPDF folder:
+   ```
+   cd /path/to/LHAPDF-6.5.4/bin/
+   ```
+
+2. To copy the path, use the `pwd` command, and make a note of it:
+   ```
+   pwd
+   ```
+   Copy the path by right-clicking in your terminal.
+
+3. Next, navigate back to the MadGraph folder:
+   ```
+   cd ..
+   ```
+
+4. Open the 'input' directory:
+   ```
+   cd input/
+   ```
+
+5. Edit the 'mg5_configuration.txt' file using a text editor like 'vi':
+   ```
+   vi mg5_configuration.txt
+   ```
+
+6. Add the following line to the file, replacing `(copied path)` with the path you copied in step 2:
+   ```
+   lhapdf6 = (copied path)
+   ```
+
+7. To save and exit the 'vi' text editor, press the 'Esc' key, then type `:wq` and press 'Enter'.
+
+These steps will link MadGraph to LHAPDF. Make sure that you have correctly built your ROOT software for this to work.
+
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+"**To install pythia8  and Delphes**
+Run your MagGraph just type 
+>>install pythia8
+
+>>install Delphes
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+Here's the corrected version of your instructions:
+
+**To download models:**
+
+1. Open your terminal and navigate to your MadGraph folder:
+   ```
+   cd /path/to/MadGraph
+   ```
+
+2. Type the following command to clone the model repository from GitHub:
+   ```
+   git clone https://github.com/LHC-DMWG/model-repository.git
+   ```
+
+3. Now, you can copy your desired model into the 'Model' folder inside the MadGraph directory.
+
+
